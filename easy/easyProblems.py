@@ -31,3 +31,13 @@ for i in my_list:
         primeNumbers.append(i)
 primeNumbers.sort()
 print (primeNumbers)
+
+#############Count the number of vowels in a string
+vowls=['a','e','i','o','u','y']
+def count_vowls(word):
+    count=0
+    for i in word:
+        if i in vowls:
+            count+=1
+    return count
+print(count_vowls('hello noussa'))
