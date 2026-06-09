@@ -41,3 +41,28 @@ def count_vowls(word):
             count+=1
     return count
 print(count_vowls('hello noussa'))
+#######sorting word's letters in a specific order
+s=input("write your word \n")
+if (0<len(s)<1000):
+    lowerS=""
+    upperS=""
+    oddS=""
+    evenS=""
+    for i in s:
+        if (i.islower()):
+            lowerS+=i
+            
+
+        elif (i.isupper()):
+            upperS+=i
+        elif (i.isdigit() and i%2!=0):
+            oddS+=i
+    
+        else:
+            evenS+=i
+    lowerS="".join(sorted(lowerS))
+    upperS="".join(sorted(upperS))
+    oddS="".join(sorted(oddS))
+    evenS="".join(sorted(evenS))
+
+    print(f"your new word is {lowerS+upperS+oddS+evenS}")
