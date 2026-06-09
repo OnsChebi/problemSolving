@@ -98,3 +98,29 @@ def remove_duplicated(lst):
             result.append(i)
     return result
 print(f"the list after removing duplicated numbers is: {remove_duplicated(lst)}")
+#password validation
+def check_password(password):
+    a,b,c = True,True,True
+    msg=""
+    
+    
+    if (len(password)<8): 
+        a=False
+        msg+="password should be at least 8 characters long. "
+        
+    if not any(char.isupper() for char in password):
+       b=False
+       msg+="password should contain at least one uppercase letter. "
+    if not any(char.isdigit() for char in password):
+        c=False
+        msg+="password should contain at least one digit. "
+    
+    while (not (a and b and c)):
+        
+        password=input(f"try again, {msg}")
+        return check_password(password)
+    else:
+        return "valid password"
+
+password =input("enter ur password: ")
+print(check_password(password))
