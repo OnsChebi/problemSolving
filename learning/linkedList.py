@@ -47,6 +47,14 @@ class LinkedList:
             current=current.next
         return num
     
+    def sum(self):
+        current=self.head
+        som=0
+        while current:
+            som+=current.data
+            current=current.next   
+        return som     
+    
 nl=LinkedList()
 x=int(input("enter the number of nodes you want to create"))
 for i in range(x):
@@ -55,6 +63,7 @@ for i in range(x):
 #print(nl.head.data)
 nl.display()
 print("Number of nodes in the linked list:", nl.count())
+print("Sum of all node data in the linked list:", nl.sum())
 
 
     
