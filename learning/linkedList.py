@@ -3,20 +3,20 @@ class Node:
     def __init__(self, data):
         self.data=data
         self.next=None
-        print("node created")
+        #print("node created")
     
-n1=Node(10)
-n2=Node(20)
-n3=Node(30)
-print(n1.data)
-print(n2.data)
-print(n3.data)
-###exercise3
-n1.next=n2
-n2.next=n3
-print(n1.data)
-print(n1.next.data)
-print(n1.next.next.data)
+# n1=Node(10)
+# n2=Node(20)
+# n3=Node(30)
+# print(n1.data)
+# print(n2.data)
+# print(n3.data)
+# ###exercise3
+# n1.next=n2
+# n2.next=n3
+# print(n1.data)
+# print(n1.next.data)
+# print(n1.next.next.data)
 #######Exercise4
 print("exercise4")
 class LinkedList:
@@ -53,8 +53,21 @@ class LinkedList:
         while current:
             som+=current.data
             current=current.next   
-        return som     
+        return som 
     
+    def findMax(self):
+        if self.head is None:
+            return None
+        else:
+            current=self.head
+            max=current.data
+            while current:
+                if current.data>=max:
+                    max=current.data
+                    
+                current=current.next
+            return max    
+        
 nl=LinkedList()
 x=int(input("enter the number of nodes you want to create"))
 for i in range(x):
@@ -64,6 +77,6 @@ for i in range(x):
 nl.display()
 print("Number of nodes in the linked list:", nl.count())
 print("Sum of all node data in the linked list:", nl.sum())
-
+print("Maximum value in the linked list:", nl.findMax())
 
     
