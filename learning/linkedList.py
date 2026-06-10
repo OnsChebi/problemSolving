@@ -58,15 +58,13 @@ class LinkedList:
     def findMax(self):
         if self.head is None:
             return None
-        else:
-            current=self.head
-            max=current.data
-            while current:
-                if current.data>=max:
-                    max=current.data
-                    
-                current=current.next
-            return max    
+        current=self.head
+        max=current.data
+        while current:
+            if current.data>=max:
+                max=current.data
+            current=current.next
+        return max    
         
 nl=LinkedList()
 x=int(input("enter the number of nodes you want to create"))
