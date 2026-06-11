@@ -78,15 +78,25 @@ class LinkedList:
             current=current.next
         return min
     
+    def search(self,data):
+        if self.head is None:
+            return False
+        current =self.head
+        while current:
+            if current.data==data:
+                return True
+            current=current.next
+        return False
+
 nl=LinkedList()
 x=int(input("enter the number of nodes you want to create"))
 for i in range(x):
     data=int(input(f"enter data for node {i+1}: "))
     nl.insert(data)
 #print(nl.head.data)
-nl.display()
-print("Number of nodes in the linked list:", nl.count())
-print("Sum of all node data in the linked list:", nl.sum())
-print("Maximum value in the linked list:", nl.findMax())
-
-    
+# nl.display()
+# print("Number of nodes in the linked list:", nl.count())
+# print("Sum of all node data in the linked list:", nl.sum())
+# print("Maximum value in the linked list:", nl.findMax())
+# print("Minimum value in the linked list:", nl.findMin())
+print("Is 20 in the linked list?", nl.search(20))
