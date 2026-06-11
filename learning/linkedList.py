@@ -64,8 +64,20 @@ class LinkedList:
             if current.data>=max:
                 max=current.data
             current=current.next
-        return max    
-        
+        return max 
+    
+    
+    def findMin(self):
+        if self.head is None:
+            return None
+        current=self.head
+        min=current.data
+        while current:
+            if current.data<=min:
+                min=current.data
+            current=current.next
+        return min
+    
 nl=LinkedList()
 x=int(input("enter the number of nodes you want to create"))
 for i in range(x):
